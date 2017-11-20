@@ -1,6 +1,6 @@
 var MongoClient = require('mongodb').MongoClient;
 var ObjectID = require('mongodb').ObjectID;
-var url = "mongodb://oly:25103279@mongodbcluster-shard-00-00-sp2pq.mongodb.net:27017,mongodbcluster-shard-00-01-sp2pq.mongodb.net:27017,mongodbcluster-shard-00-02-sp2pq.mongodb.net:27017/movie2see?ssl=true&replicaSet=MongoDBCluster-shard-0&authSource=admin";
+var url = "mongodb://localhost:27017/quiz3";
 var db;
 
 MongoClient.connect(url, function (err, database) {
@@ -47,6 +47,17 @@ function findByFname(req, res) {
         //     result: result
         // });
     });
+    // db.collection("users")
+    //     .find({
+    //             'fname': req.query.fname
+    //         },
+    //         function (err, item) {
+    //             // res.send(item);
+    //             console.log(item);
+    //             res.render('showuser.hbs', {
+    //                 item: item
+    //             });
+    //         });
 };
 
 function findByRole(req, res) {
@@ -61,6 +72,17 @@ function findByRole(req, res) {
         //     result: result
         // });
     });
+    // db.collection("users")
+    //     .findOne({
+    //             'role': req.params.role
+    //         },
+    //         function (err, item) {
+    //             // res.send(item);
+    //             // console.log(item);
+    //             res.render('showuserbyrole.hbs', {
+    //                 item: item
+    //             });
+    //         });
 };
 
 module.exports = {
